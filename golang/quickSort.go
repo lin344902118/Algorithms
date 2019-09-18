@@ -1,10 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
+package golang
 
 func QuickSort(arr []int) []int {
 	if len(arr) < 2{
@@ -24,15 +18,4 @@ func QuickSort(arr []int) []int {
 	sortedArr = append(QuickSort(less), num)
 	sortedArr = append(sortedArr, QuickSort(greater)...)
 	return sortedArr
-}
-
-func main(){
-	testArr := make([]int, 0, 10)
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	for i := 0; i < 10; i++ {
-		testArr = append(testArr, r.Intn(100))
-	}
-	fmt.Println("testArr", testArr)
-	sortedArr := QuickSort(testArr)
-	fmt.Println("sortedArr", sortedArr)
 }

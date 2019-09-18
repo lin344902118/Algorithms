@@ -1,10 +1,4 @@
-package main
-
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
+package golang
 
 func FindSmallestNum(arr []int) int {
 	smallestNum := arr[0]
@@ -27,15 +21,3 @@ func SelectSort(arr []int) []int{
 	}
 	return newArr
 }
-
-func main(){
-	testArr := make([]int, 0, 10)
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	for i := 0; i < 10; i++ {
-		testArr = append(testArr, r.Intn(100))
-	}
-	fmt.Println("testArr", testArr)
-	sortedArr := SelectSort(testArr)
-	fmt.Println("sortedArr", sortedArr)
-}
-

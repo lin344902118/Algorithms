@@ -10,6 +10,8 @@ import unittest
 from python.selectSort import select_sort
 from python.quickSort import quick_sort
 from python.bubbleSort import bubble_sort
+from python.insertSort import insert_sort
+from python.mergeSort import merge_sort
 
 def get_random_arr():
     nums = [i for i in range(100)]
@@ -41,6 +43,18 @@ class SortTest(unittest.TestCase):
     def test_select_sort(self):
         test_arr = get_random_arr()
         sorted_arr = select_sort(test_arr)
+        print(sorted_arr)
+        self.sort_test(sorted_arr)
+
+    def test_insert_sort(self):
+        test_arr = get_random_arr()
+        sorted_arr = insert_sort(test_arr)
+        print(sorted_arr)
+        self.sort_test(sorted_arr)
+
+    def test_merge_sort(self):
+        test_arr = get_random_arr()
+        sorted_arr = merge_sort(test_arr)
         print(sorted_arr)
         self.sort_test(sorted_arr)
 
